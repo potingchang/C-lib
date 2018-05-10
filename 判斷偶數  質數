@@ -1,0 +1,44 @@
+/*
+ ============================================================================
+ Name        : 6-2.c
+ Author      : ken
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int isPrime(int k);
+#define even(n) ((n&1)==0)
+
+int main(void) {
+	puts("!!!Hello Worldaaaaa!!!"); /* prints !!!Hello World!!! */
+	int sum = 0;
+
+	for (int i = 2; i <= 27; i++) {
+		if (isPrime(i)  && !even(i)) {
+			sum += i;
+			printf("i=%d ",i);
+		}
+	}
+
+	printf("\n\nsum=%d",sum);
+
+	return EXIT_SUCCESS;
+}
+
+int isPrime(int k) {
+	int ret = 1;
+
+	for (int i = 2; i < k; i++) {
+		if (k % i == 0) {
+			ret = 0;
+			break;
+		}
+	}
+
+	return ret;
+}
