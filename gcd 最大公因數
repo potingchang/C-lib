@@ -1,0 +1,79 @@
+/*
+ ============================================================================
+ Name        : homework.c
+ Author      : aaa
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void sumx() {
+	int n = 10;
+	float sum = 0;
+	//scanf(" %d",&n);
+	int sign = -1;
+	for (int i = 1; i <= n; i++) {
+		sum += 1.0 / i * sign;
+		sign = -sign;
+		//printf("i=%d",i);
+	}
+
+	printf("sum=%f", sum);
+}
+void gcd() {
+	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	int a = 12, b = 24;
+
+	int min = a > b ? b : a;
+	int gcd_num;
+	for (int i = 1; i < min; i++) {
+		if (a % i == 0 && b % i == 0) {
+			gcd_num = i;
+		}
+	}
+	printf("gcd=%d", gcd_num);
+}
+void gcd2() {
+	//	 a  b  t
+	//	 12 19 12
+	//	 19 12  7
+	//	 12  7  5
+	//	  7	 5  2
+	//	  5  2  1
+	int a = 12, b = 19, t = 0;
+	while (b != 0) {
+		t = a % b;
+		a = b;
+		b = t;
+	}
+	printf("a=%d", a);
+}
+int main(void) {
+	int num = 12345;
+	printf("aaaa\n");
+//	int sum = 0;
+//	while (num > 0) {
+//		sum += num % 10;
+//		sum *= 10;
+//		num /= 10;
+//		printf("aaaa");
+//	}
+	printf("aaaa");
+
+	for (; num > 0; num /= 10) {
+		int n = num % 10;
+		printf(" %d", n);
+	}
+//	do {
+//		int n = num % 10;
+//		printf(" %d", n);
+//		num/=10;
+//	} while (num > 0);
+
+	return EXIT_SUCCESS;
+}
+
